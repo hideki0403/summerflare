@@ -23,7 +23,7 @@ app.onError((error, context) => {
   return context.json({ error: error.message }, 500);
 });
 
-app.get("/url", async (context) => {
+app.get("/", async (context) => {
   let url: URL;
   try {
     url = new URL(context.req.query("url")!);
