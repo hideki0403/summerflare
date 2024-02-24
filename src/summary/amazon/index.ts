@@ -1,4 +1,4 @@
-import cleanupTitle from "summaly/built/utils/cleanup-title";
+import cleanupTitle from "@misskey-dev/summaly/built/utils/cleanup-title";
 import getCard from "../general/card";
 import getDescription from "./description";
 import getFavicon from "../general/favicon";

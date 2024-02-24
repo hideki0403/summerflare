@@ -1,4 +1,4 @@
-import clip from "summaly/built/utils/clip";
+import clip from "@misskey-dev/summaly/built/utils/clip";
 
 export default async function wikipedia(url: URL, html: HTMLRewriter) {
   const lang = url.hostname.split(".")[0];

@@ -1,5 +1,5 @@
 import { decode } from "html-entities";
-import clip from "summaly/built/utils/clip";
+import clip from "@misskey-dev/summaly/built/utils/clip";
 import { BufferedTextHandler, assign } from "../common";
 import type { PrioritizedReference } from "../common";
 
