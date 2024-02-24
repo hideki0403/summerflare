@@ -12,6 +12,14 @@ export default function getSensitive(url: URL, html: HTMLRewriter) {
       assign(result, 1, true);
     },
   });
+  html.on('meta[property="mixi:content-rating"]', {
+    element(element) {
+      const content = element.getAttribute("content");
+      if (content == "1") {
+        assign(result, 2, true);
+      }
+    },
+  });
   return new Promise<boolean>((resolve) => {
     html.onDocument({
       end() {
