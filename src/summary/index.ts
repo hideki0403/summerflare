@@ -1,6 +1,7 @@
 import amazon from "./amazon";
 import general from "./general";
 import wikipedia from "./wikipedia";
+import branchio from "./branchio";
 
 export default function summary(url: URL, html: HTMLRewriter) {
   if (
@@ -21,8 +22,14 @@ export default function summary(url: URL, html: HTMLRewriter) {
   ) {
     return amazon(url, html);
   }
+
   if (`.${url.hostname}`.endsWith(".wikipedia.org")) {
     return wikipedia(url, html);
   }
+
+  if (/^[a-zA-Z0-9]+\.app\.link$/.test(url.hostname) || url.hostname === 'spotify.link') {
+    return branchio(url, html);
+  }
+
   return general(url, html);
 }
